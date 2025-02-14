@@ -22,4 +22,13 @@ $(document).ready(function () {
         }, 'slow');
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    var music = document.getElementById("bg-music");
+    music.play().catch(() => {
+        // If autoplay is blocked, play music on first user interaction
+        document.addEventListener("click", function() {
+            music.play();
+        }, { once: true });
+    });
+});
 
