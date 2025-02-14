@@ -8,16 +8,16 @@ document.getElementById("showFlowersBtn").addEventListener("click", function () 
     document.querySelector(".flowers").classList.add("show");
 });
 
-    document.getElementById("showFlowers").addEventListener("click", function() {
-    document.querySelector(".flowers").style.display = "block";
-});
-document.addEventListener("DOMContentLoaded", function () {
-    var music = document.getElementById("bg-music");
+    document.addEventListener("DOMContentLoaded", function () {
+        var music = document.getElementById("bg-music");
 
-    music.play().catch(() => {
-        document.addEventListener("click", function () {
-            music.play();
-        }, { once: true });
+        // If the audio element is found
+        if (music) {
+            music.play().catch(() => {
+                document.addEventListener("click", function () {
+                    music.play();
+                }, { once: true });
+            });
+        }
     });
-});
 
